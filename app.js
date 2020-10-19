@@ -10,6 +10,8 @@ const twitter = new Twitter();
 
 // console.log(process.env.TWITTER_API_TOKEN)
 
+const port = process.env.PORT || 3000;
+
 app.use(express.static('client'))
 
 app.use(function (req, res, next) {
@@ -31,4 +33,4 @@ app.get('/api/tweets', (req, res) => {
     });
 })
 
-app.listen(3000, () => console.log("Listening on http://localhost:3000/"));
+app.listen(port, () => console.log("Listening on http://localhost:3000/"));
